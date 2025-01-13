@@ -1,13 +1,3 @@
-CREATE OR REPLACE TRIGGER update_monsters_hunted
-  AFTER INSERT ON hunters
-  FOR EACH ROW
-BEGIN
-  UPDATE hunters
-     SET monsters_hunted = monsters_hunted + 1
-   WHERE hunter_id = :new.hunter_id;
-END;
-/
-
 CREATE OR REPLACE TRIGGER monsters_id_trg
 BEFORE INSERT ON monsters
   FOR EACH ROW
@@ -25,7 +15,7 @@ BEGIN
   IF :new.area_id IS NULL THEN
      :new.area_id := area_id_seq.nextval;
   END IF;
-END maps_id_trg;
+END areas_id_trg;
 /
 
 CREATE OR REPLACE TRIGGER weapons_id_trg
