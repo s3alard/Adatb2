@@ -1,58 +1,58 @@
-INSERT INTO hunter_weapons
+INSERT INTO hunter_weapon
   (NAME
   ,TYPE)
 VALUES
   ('Great Sword'
   ,'Melee');
-INSERT INTO hunter_weapons
+INSERT INTO hunter_weapon
   (NAME
   ,TYPE)
 VALUES
   ('Long Sword'
   ,'Melee');
-INSERT INTO hunter_weapons
+INSERT INTO hunter_weapon
   (NAME
   ,TYPE)
 VALUES
   ('Sword and Shield'
   ,'Melee');
-INSERT INTO hunter_weapons
+INSERT INTO hunter_weapon
   (NAME
   ,TYPE)
 VALUES
   ('Dual Blades'
   ,'Melee');
-INSERT INTO hunter_weapons
+INSERT INTO hunter_weapon
   (NAME
   ,TYPE)
 VALUES
   ('Lance'
   ,'Melee');
-INSERT INTO hunter_weapons
+INSERT INTO hunter_weapon
   (NAME
   ,TYPE)
 VALUES
   ('Gunlance'
   ,'Melee');
-INSERT INTO hunter_weapons
+INSERT INTO hunter_weapon
   (NAME
   ,TYPE)
 VALUES
   ('Hammer'
   ,'Melee');
-INSERT INTO hunter_weapons
+INSERT INTO hunter_weapon
   (NAME
   ,TYPE)
 VALUES
   ('Hunting Horn'
   ,'Melee');
-INSERT INTO hunter_weapons
+INSERT INTO hunter_weapon
   (NAME
   ,TYPE)
 VALUES
   ('Bow'
   ,'Ranged');
-INSERT INTO hunter_weapons
+INSERT INTO hunter_weapon
   (NAME
   ,TYPE)
 VALUES
@@ -96,7 +96,7 @@ VALUES
   ('Legiana Armor'
   ,105);
 
-INSERT INTO monsters
+INSERT INTO monster
   (NAME
   ,TYPE
   ,weakness)
@@ -104,7 +104,7 @@ VALUES
   ('Banbaro'
   ,'Brute Wyvern'
   ,'Dragon');
-INSERT INTO monsters
+INSERT INTO monster
   (NAME
   ,TYPE
   ,weakness)
@@ -112,7 +112,7 @@ VALUES
   ('Beotodus'
   ,'Piscine Wyvern'
   ,'Fire');
-INSERT INTO monsters
+INSERT INTO monster
   (NAME
   ,TYPE
   ,weakness)
@@ -120,7 +120,7 @@ VALUES
   ('Nargacuga'
   ,'Flying Wyvern'
   ,'Thunder');
-INSERT INTO monsters
+INSERT INTO monster
   (NAME
   ,TYPE
   ,weakness)
@@ -128,7 +128,7 @@ VALUES
   ('Velkhana'
   ,'Elder Dragon'
   ,'Fire');
-INSERT INTO monsters
+INSERT INTO monster
   (NAME
   ,TYPE
   ,weakness)
@@ -136,7 +136,7 @@ VALUES
   ('Tigrex'
   ,'Brute Wyvern'
   ,'Thunder');
-INSERT INTO monsters
+INSERT INTO monster
   (NAME
   ,TYPE
   ,weakness)
@@ -145,44 +145,44 @@ VALUES
   ,'Flying Wyvern'
   ,'Fire');
 
-INSERT INTO areas
+INSERT INTO area
   (NAME
   ,monster_id)
 VALUES
   ('Ancient Forest'
   ,103);
-INSERT INTO areas
+INSERT INTO area
   (NAME
   ,monster_id)
 VALUES
   ('Wildspire Waste'
   ,101);
-INSERT INTO areas
+INSERT INTO area
   (NAME
   ,monster_id)
 VALUES
   ('Coral Highlands'
   ,102);
-INSERT INTO areas
+INSERT INTO area
   (NAME
   ,monster_id)
 VALUES
   ('Hoarfrost Reach'
   ,103);
-INSERT INTO areas
+INSERT INTO area
   (NAME
   ,monster_id)
 VALUES
   ('Elder’s Recess'
   ,104);
-INSERT INTO areas
+INSERT INTO area
   (NAME
   ,monster_id)
 VALUES
   ('Rotten Vale'
   ,100);
 
-INSERT INTO hunters
+INSERT INTO hunter
   (NAME
   ,weapon_id
   ,armor_id
@@ -192,7 +192,7 @@ VALUES
   ,1000
   ,2000
   ,5);
-INSERT INTO hunters
+INSERT INTO hunter
   (NAME
   ,weapon_id
   ,armor_id
@@ -202,7 +202,7 @@ VALUES
   ,1001
   ,2001
   ,3);
-INSERT INTO hunters
+INSERT INTO hunter
   (NAME
   ,weapon_id
   ,armor_id
@@ -212,7 +212,7 @@ VALUES
   ,1002
   ,2002
   ,7);
-INSERT INTO hunters
+INSERT INTO hunter
   (NAME
   ,weapon_id
   ,armor_id
@@ -222,7 +222,7 @@ VALUES
   ,1003
   ,2003
   ,2);
-INSERT INTO hunters
+INSERT INTO hunter
   (NAME
   ,weapon_id
   ,armor_id
@@ -232,7 +232,7 @@ VALUES
   ,1004
   ,2004
   ,9);
-INSERT INTO hunters
+INSERT INTO hunter
   (NAME
   ,weapon_id
   ,armor_id
@@ -242,7 +242,7 @@ VALUES
   ,1005
   ,2005
   ,1);
-INSERT INTO hunters
+INSERT INTO hunter
   (NAME
   ,weapon_id
   ,armor_id
@@ -252,7 +252,7 @@ VALUES
   ,1006
   ,2002
   ,4);
-INSERT INTO hunters
+INSERT INTO hunter
   (NAME
   ,weapon_id
   ,armor_id
@@ -262,7 +262,7 @@ VALUES
   ,1007
   ,2003
   ,6);
-INSERT INTO hunters
+INSERT INTO hunter
   (NAME
   ,weapon_id
   ,armor_id
@@ -272,7 +272,7 @@ VALUES
   ,1008
   ,2004
   ,8);
-INSERT INTO hunters
+INSERT INTO hunter
   (NAME
   ,weapon_id
   ,armor_id

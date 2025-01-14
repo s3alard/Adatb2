@@ -1,49 +1,99 @@
 CREATE OR REPLACE TRIGGER monsters_id_trg
-BEFORE INSERT ON monsters
+  BEFORE INSERT ON monster
   FOR EACH ROW
 BEGIN
-  IF :new.monster_id IS NULL THEN
-     :new.monster_id := monster_id_seq.nextval;
+  IF :new.monster_id IS NULL
+  THEN
+    :new.monster_id := monster_id_seq.nextval;
   END IF;
 END monsters_id_trg;
 /
 
 CREATE OR REPLACE TRIGGER areas_id_trg
-BEFORE INSERT ON areas
+  BEFORE INSERT ON area
   FOR EACH ROW
 BEGIN
-  IF :new.area_id IS NULL THEN
-     :new.area_id := area_id_seq.nextval;
+  IF :new.area_id IS NULL
+  THEN
+    :new.area_id := area_id_seq.nextval;
   END IF;
 END areas_id_trg;
 /
 
 CREATE OR REPLACE TRIGGER weapons_id_trg
-BEFORE INSERT ON hunter_weapons
+  BEFORE INSERT ON hunter_weapon
   FOR EACH ROW
 BEGIN
-  IF :new.weapon_id IS NULL THEN
-     :new.weapon_id := weapon_id_seq.nextval;
+  IF :new.weapon_id IS NULL
+  THEN
+    :new.weapon_id := weapon_id_seq.nextval;
   END IF;
 END weapons_id_trg;
 /
 
 CREATE OR REPLACE TRIGGER armor_id_trg
-BEFORE INSERT ON hunter_armor
+  BEFORE INSERT ON hunter_armor
   FOR EACH ROW
 BEGIN
-  IF :new.armor_id IS NULL THEN
-     :new.armor_id := armor_id_seq.nextval;
+  IF :new.armor_id IS NULL
+  THEN
+    :new.armor_id := armor_id_seq.nextval;
   END IF;
 END armor_id_trg;
 /
 
 CREATE OR REPLACE TRIGGER hunters_id_trg
-BEFORE INSERT ON hunters
+  BEFORE INSERT ON hunter
   FOR EACH ROW
 BEGIN
-  IF :new.hunter_id IS NULL THEN
-     :new.hunter_id := hunter_id_seq.nextval;
+  IF :new.hunter_id IS NULL
+  THEN
+    :new.hunter_id := hunter_id_seq.nextval;
   END IF;
 END hunters_id_trg;
+/
+
+CREATE OR REPLACE TRIGGER monster_audit_trg
+  BEFORE UPDATE ON monster
+  FOR EACH ROW
+BEGIN
+  :new.updated_at := current_timestamp;
+  :new.updated_by := USER;
+END;
+/
+
+CREATE OR REPLACE TRIGGER area_audit_trg
+  BEFORE UPDATE ON area
+  FOR EACH ROW
+BEGIN
+  :new.updated_at := current_timestamp;
+  :new.updated_by := USER;
+END;
+/
+
+CREATE OR REPLACE TRIGGER hunter_weapon_audit_trg
+  BEFORE UPDATE ON hunter_weapon
+  FOR EACH ROW
+BEGIN
+  :new.updated_at := current_timestamp;
+  :new.updated_by := USER;
+END;
+/
+
+CREATE OR REPLACE TRIGGER hunter_armor_audit_trg
+  BEFORE UPDATE ON hunter_armor
+  FOR EACH ROW
+BEGIN
+  :new.updated_at := current_timestamp;
+  :new.updated_by := USER;
+END;
+/
+
+CREATE OR REPLACE TRIGGER hunter_audit_trg
+  BEFORE UPDATE ON hunter
+  FOR EACH ROW
+BEGIN
+  :new.updated_at := current_timestamp;
+  :new.updated_by := USER;
+END;
 /
