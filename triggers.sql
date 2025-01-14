@@ -53,47 +53,4 @@ BEGIN
 END hunters_id_trg;
 /
 
-CREATE OR REPLACE TRIGGER monster_audit_trg
-  BEFORE UPDATE ON monster
-  FOR EACH ROW
-BEGIN
-  :new.updated_at := current_timestamp;
-  :new.updated_by := USER;
-END;
-/
 
-CREATE OR REPLACE TRIGGER area_audit_trg
-  BEFORE UPDATE ON area
-  FOR EACH ROW
-BEGIN
-  :new.updated_at := current_timestamp;
-  :new.updated_by := USER;
-END;
-/
-
-CREATE OR REPLACE TRIGGER hunter_weapon_audit_trg
-  BEFORE UPDATE ON hunter_weapon
-  FOR EACH ROW
-BEGIN
-  :new.updated_at := current_timestamp;
-  :new.updated_by := USER;
-END;
-/
-
-CREATE OR REPLACE TRIGGER hunter_armor_audit_trg
-  BEFORE UPDATE ON hunter_armor
-  FOR EACH ROW
-BEGIN
-  :new.updated_at := current_timestamp;
-  :new.updated_by := USER;
-END;
-/
-
-CREATE OR REPLACE TRIGGER hunter_audit_trg
-  BEFORE UPDATE ON hunter
-  FOR EACH ROW
-BEGIN
-  :new.updated_at := current_timestamp;
-  :new.updated_by := USER;
-END;
-/
