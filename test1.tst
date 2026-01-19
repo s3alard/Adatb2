@@ -1,5 +1,5 @@
 PL/SQL Developer Test script 3.0
-20
+19
 BEGIN
     INSERT INTO monsters (name, type, weakness) 
     VALUES ('Barioth', 'Flying Wyvern', 'Fire');
@@ -18,7 +18,6 @@ BEGIN
         END IF;
     END;
 END;
-
 
 0
 0

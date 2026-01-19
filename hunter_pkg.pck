@@ -1,15 +1,15 @@
 CREATE OR REPLACE PACKAGE hunter_pkg AS
 
   FUNCTION get_hunter_weapon(p_hunter_id NUMBER) RETURN VARCHAR2;
-
+  
   FUNCTION get_monsters_hunted(p_hunter_id NUMBER) RETURN NUMBER;
-
+  
+  FUNCTION get_hunter_total_monsters RETURN NUMBER;
+  
   PROCEDURE update_monsters_hunted(p_hunter_id NUMBER);
-
-  PROCEDURE add_new_monster(p_name     VARCHAR2
-                           ,p_type     VARCHAR2
-                           ,p_weakness VARCHAR2);
-
+  
+  PROCEDURE add_new_monster(p_name VARCHAR2,p_type VARCHAR2,p_weakness VARCHAR2);
+  
 END hunter_pkg;
 /
 CREATE OR REPLACE PACKAGE BODY hunter_pkg AS
@@ -27,6 +27,7 @@ CREATE OR REPLACE PACKAGE BODY hunter_pkg AS
     RETURN v_weapon_name;
   END get_hunter_weapon;
 
+
   FUNCTION get_monsters_hunted(p_hunter_id NUMBER) RETURN NUMBER IS
     v_monsters_hunted NUMBER;
   BEGIN
@@ -37,6 +38,19 @@ CREATE OR REPLACE PACKAGE BODY hunter_pkg AS
   
     RETURN v_monsters_hunted;
   END get_monsters_hunted;
+
+
+ FUNCTION get_hunter_total_monsters RETURN NUMBER IS
+    v_total NUMBER; 
+ BEGIN
+    SELECT NVL(SUM(monsters_hunted),0) 
+    INTO v_total 
+    FROM hunter;
+    RETURN v_total;
+  EXCEPTION WHEN OTHERS THEN RAISE_APPLICATION_ERROR(-20013,'Error getting total monsters hunted: ' || SQLERRM);
+ END get_hunter_total_monsters;
+
+
 
   PROCEDURE update_monsters_hunted(p_hunter_id NUMBER) IS
     v_current_monsters_hunted NUMBER;
